@@ -14,7 +14,7 @@ public class Feature {
 
     private String featureName;
 
-    @ManyToMany(mappedBy = "laptops")
+    @ManyToMany(mappedBy = "features")
     private List<Laptop> laptops;
 
     public Long getFeatureId() {
