@@ -2,6 +2,9 @@ package com.app.training;
 
 import javax.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "laptops")
 public class Laptop {
@@ -15,6 +18,14 @@ public class Laptop {
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Student student;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "laptop_features",
+            joinColumns = @JoinColumn(name = "laptop_id"),
+            inverseJoinColumns = @JoinColumn(name = "feature_id")
+    )
+    private List<Feature> features;
 
     public Long getLaptopId() {
         return laptopId;
@@ -46,5 +57,21 @@ public class Laptop {
 
     public void setStudent(Student student) {
         this.student = student;
+    }
+
+    public List<Feature> getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(List<Feature> features) {
+        this.features = features;
+    }
+
+    public void addFeature(Feature feature) {
+        if (features == null) {
+            features = new ArrayList<>();
+        }
+        features.add(feature);
+        feature.getLaptops().add(this);
     }
 }

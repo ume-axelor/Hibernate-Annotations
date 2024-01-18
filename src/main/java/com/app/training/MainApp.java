@@ -5,9 +5,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainApp {
 
     public static void main(String[] args) {
@@ -42,11 +39,21 @@ public class MainApp {
 
                 Laptop laptop1 = new Laptop();
                 laptop1.setBrand("Brand1");
+                
                 laptop1.setModel("Model1");
 
                 Laptop laptop2 = new Laptop();
                 laptop2.setBrand("Brand2");
                 laptop2.setModel("Model2");
+
+                Feature feature1 = new Feature();
+                feature1.setFeatureName("Touch Screen");
+
+                Feature feature2 = new Feature();
+                feature2.setFeatureName("Backlit Keyboard");
+
+                laptop1.addFeature(feature1);
+                laptop1.addFeature(feature2);
 
                 student1.addLaptopItem(laptop1);
                 student1.addLaptopItem(laptop2);
@@ -67,6 +74,15 @@ public class MainApp {
                 Laptop laptop4 = new Laptop();
                 laptop4.setBrand("Brand4");
                 laptop4.setModel("Model4");
+                
+                Feature feature3 = new Feature();
+                feature3.setFeatureName("SSD Drive");
+
+                Feature feature4 = new Feature();
+                feature4.setFeatureName("High-Resolution Display");
+
+                laptop3.addFeature(feature3);
+                laptop3.addFeature(feature4);
 
                 student2.addLaptopItem(laptop3);
                 student2.addLaptopItem(laptop4);

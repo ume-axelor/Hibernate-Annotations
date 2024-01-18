@@ -13,5 +13,6 @@
         <mapping class="com.app.training.Student"/>
         <mapping class="com.app.training.Address"/>
         <mapping class="com.app.training.Laptop"/>
+        <mapping class="com.app.training.Feature"/>
     </session-factory>
 </hibernate-configuration>

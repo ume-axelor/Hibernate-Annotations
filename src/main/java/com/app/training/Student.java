@@ -21,9 +21,7 @@ public class Student {
     private Address address;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "student")
-    private List<Laptop> laptops = new ArrayList<>(); // Initialize the list
-
-    // Other fields and methods
+    private List<Laptop> laptops = new ArrayList<>(); 
 
     public Long getStudentId() {
         return studentId;
