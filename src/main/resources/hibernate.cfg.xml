@@ -5,11 +5,13 @@
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/student-demo</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/studemo</property>
         <property name="hibernate.connection.username">axelor</property>
         <property name="hibernate.connection.password">axelor</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <mapping class="com.app.training.Student"/>
+        <mapping class="com.app.training.Address"/>
+        <mapping class="com.app.training.Laptop"/>
     </session-factory>
 </hibernate-configuration>
