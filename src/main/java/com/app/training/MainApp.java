@@ -47,14 +47,9 @@ public class MainApp {
                 Laptop laptop2 = new Laptop();
                 laptop2.setBrand("Brand2");
                 laptop2.setModel("Model2");
-               
+
                 student1.addLaptopItem(laptop1);
-
-                List<Laptop> laptops1 = new ArrayList<>();
-                laptops1.add(laptop1);
-                laptops1.add(laptop2);
-
-                student1.setLaptops(laptops1);
+                student1.addLaptopItem(laptop2);
 
                 session.persist(student1);
 
@@ -73,11 +68,8 @@ public class MainApp {
                 laptop4.setBrand("Brand4");
                 laptop4.setModel("Model4");
 
-                List<Laptop> laptops2 = new ArrayList<>();
-                laptops2.add(laptop3);
-                laptops2.add(laptop4);
-
-                student2.setLaptops(laptops2);
+                student2.addLaptopItem(laptop3);
+                student2.addLaptopItem(laptop4);
 
                 session.persist(student2);
 
